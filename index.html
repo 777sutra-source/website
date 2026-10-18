@@ -1,49 +1,13 @@
 <!DOCTYPE html>
 <html lang="uk" class="scroll-smooth">
 <head>
-<!-- Google Analytics 4 (GA4) + Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKCFYTMFB7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FKCFYTMFB7');
-  gtag('config', 'AW-18458350133');
-
-  // Надійне відстеження контактних кнопок для реклами
-  document.addEventListener('click', function(e) {
-    var link = e.target.closest('a');
-    if (!link || !link.href) return;
-
-    var href = link.href.toLowerCase();
-
-    // Клік на дзвінок
-    if (href.indexOf('tel:') === 0) {
-      gtag('event', 'click_phone', {
-        'transport_type': 'beacon',
-        'event_category': 'Contact',
-        'event_label': 'Phone Call'
-      });
-    }
-    // Клік на Telegram
-    else if (href.indexOf('t.me') !== -1 || href.indexOf('telegram.me') !== -1) {
-      gtag('event', 'click_telegram', {
-        'transport_type': 'beacon',
-        'event_category': 'Contact',
-        'event_label': 'Telegram'
-      });
-    }
-    // Клік на Viber
-    else if (href.indexOf('viber') !== -1) {
-      gtag('event', 'click_viber', {
-        'transport_type': 'beacon',
-        'event_category': 'Contact',
-        'event_label': 'Viber'
-      });
-    }
-  });
-</script>
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NG2VDF95');</script>
+<!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -1144,4 +1108,8 @@
     });
   </script>
 </body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NG2VDF95"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 </html>
