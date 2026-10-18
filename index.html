@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="uk" class="scroll-smooth">
 <head>
+  <!-- Google Analytics 4 (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKCFYTMFB7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FKCFYTMFB7');
+
+  // Відстеження дзвінків, Telegram та Viber для реклами
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gtag('event', 'click_phone', { 'event_category': 'Contact', 'event_label': 'Phone Call' });
+      });
+    });
+    document.querySelectorAll('a[href*="t.me"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gtag('event', 'click_telegram', { 'event_category': 'Contact', 'event_label': 'Telegram' });
+      });
+    });
+    document.querySelectorAll('a[href*="viber"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        gtag('event', 'click_viber', { 'event_category': 'Contact', 'event_label': 'Viber' });
+      });
+    });
+  });
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
