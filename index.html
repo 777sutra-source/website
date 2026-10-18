@@ -11,23 +11,37 @@
   gtag('config', 'G-FKCFYTMFB7');
   gtag('config', 'AW-18458350133');
 
-  // Відстеження дзвінків, Telegram та Viber для реклами
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href^="tel:"]').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        gtag('event', 'click_phone', { 'event_category': 'Contact', 'event_label': 'Phone Call' });
+  // Надійне відстеження контактних кнопок для реклами
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (!link || !link.href) return;
+
+    var href = link.href.toLowerCase();
+
+    // Клік на дзвінок
+    if (href.indexOf('tel:') === 0) {
+      gtag('event', 'click_phone', {
+        'transport_type': 'beacon',
+        'event_category': 'Contact',
+        'event_label': 'Phone Call'
       });
-    });
-    document.querySelectorAll('a[href*="t.me"]').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        gtag('event', 'click_telegram', { 'event_category': 'Contact', 'event_label': 'Telegram' });
+    }
+    // Клік на Telegram
+    else if (href.indexOf('t.me') !== -1 || href.indexOf('telegram.me') !== -1) {
+      gtag('event', 'click_telegram', {
+        'transport_type': 'beacon',
+        'event_category': 'Contact',
+        'event_label': 'Telegram'
       });
-    });
-    document.querySelectorAll('a[href*="viber"]').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        gtag('event', 'click_viber', { 'event_category': 'Contact', 'event_label': 'Viber' });
+    }
+    // Клік на Viber
+    else if (href.indexOf('viber') !== -1) {
+      gtag('event', 'click_viber', {
+        'transport_type': 'beacon',
+        'event_category': 'Contact',
+        'event_label': 'Viber'
       });
-    });
+    }
   });
 </script>
   <meta charset="UTF-8">
